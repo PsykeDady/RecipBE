@@ -13,7 +13,7 @@ import psykeco.recipbe.services.IngredientService;
 
 @RestController
 @RequestMapping("ingredients")
-@CrossOrigin(originPatterns = "http://localhost:4202")
+@CrossOrigin(originPatterns = "*")
 public class IngredientApi {
 
 	@Autowired
