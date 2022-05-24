@@ -30,7 +30,7 @@ public class RecipeService {
 
 	public GenericResponse addRecipe(Ricetta r){
 		recipeQuery.saveAndFlush(r);
-		return new GenericResponse().code(CODE_200_OK).message(ADDED_OK_RECIPE).property("existsTable",recipeQuery.existsRecipeTable().stream().reduce((p,n)->p+";"+n).get());
+		return new GenericResponse().code(CODE_200_OK).message(ADDED_OK_RECIPE);
 	}
 
 	public GenericResponse getRecipes(Ricetta ricetta){
