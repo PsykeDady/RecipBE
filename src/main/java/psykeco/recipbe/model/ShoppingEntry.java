@@ -1,6 +1,8 @@
 package psykeco.recipbe.model;
 
 
+import java.util.Optional;
+
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 
@@ -24,9 +26,7 @@ public class ShoppingEntry {
 	private boolean spunta;
 	
 
-	public ShoppingEntry() {
-		nameOrDefault();
-	}
+	public ShoppingEntry() {}
 
 	public ShoppingEntry(String shoppingList, String name, float qta, String unit,boolean spunta){
 		setShoppingList(shoppingList);
@@ -34,15 +34,8 @@ public class ShoppingEntry {
 		this.qta=qta;
 		this.unit=unit;
 		this.spunta=spunta;
-		nameOrDefault();
 	}
 
-	public void nameOrDefault() {
-		setShoppingList(getShoppingList()==null||"".equals(getShoppingList())?DEFAULT_SHOPPING_LIST:getShoppingList());
-	}
-
-	
-	
 	public String getUnit() {
 		return unit;
 	}
@@ -69,11 +62,11 @@ public class ShoppingEntry {
 	}
 	
 	public void setShoppingList(String shoppingList){
+		shoppingList=shoppingList==null||"".equals(shoppingList) ? DEFAULT_SHOPPING_LIST : shoppingList;
 		this.chiave.setShoppingList(shoppingList);
 	}
 	public void setName(String name){
 		this.chiave.setName(name);
-		System.out.println("set"+this.chiave.getName());
 	}
 
 	public String getShoppingList () {

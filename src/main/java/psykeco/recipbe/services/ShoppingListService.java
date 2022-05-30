@@ -28,13 +28,20 @@ public class ShoppingListService {
 	private ShoppingEntryQuery shoppingEntryQuery; 
 
 	public GenericResponse addIngredient(ShoppingEntry shoppingEntry){
+		System.out.println("\n\n\n\n\n\n\n\n\n");
+		System.out.println("SHOPPING LIST AT ADD START ="+shoppingEntry.getShoppingList());
+
 		ShoppingEntryValidator validate=new ShoppingEntryValidator(shoppingEntry).requiredName().qtaPositive();
 
 		if(!validate.isValid()){
 			return new GenericResponse().code(CODE_412_NOT_VALID).message(ADDED_KO_INGREDIENT+validate.message());
 		}
 
+
+		System.out.println("SHOPPING LIST AT ADD ="+shoppingEntry.getShoppingList());
+
 		shoppingEntryQuery.saveAndFlush(shoppingEntry);
+		System.out.println("\n\n\n\n\n\n\n\n\n");
 		return new GenericResponse().code(CODE_200_OK).message(ADDED_OK_INGREDIENT);
 	}
 

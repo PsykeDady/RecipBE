@@ -14,7 +14,6 @@ public class ShoppingEntryValidator {
 	}
 
 	public ShoppingEntryValidator requiredName(){
-		System.out.println("required="+this.shoppingEntry.getName());
 		boolean precondition=this.shoppingEntry.getName() != null&&!"".equals(shoppingEntry.getName());
 		valid=valid&&precondition;
 		message.append(precondition?"":REQUIRED_NAME);
