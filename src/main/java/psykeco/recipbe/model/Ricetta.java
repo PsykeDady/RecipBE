@@ -2,6 +2,7 @@ package psykeco.recipbe.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -19,8 +20,8 @@ public class Ricetta {
 	@Id
 	private String name; 
 	
-	@OneToMany(mappedBy = "name")
-	private List<Ingrediente> ingredients; 
+	@OneToMany(mappedBy = "name", cascade = CascadeType.ALL)
+	private List<Composizione> ingredients; 
 	private String descrizione; 
 	private String imgPath;
 }

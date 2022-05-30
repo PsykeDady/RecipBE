@@ -3,16 +3,15 @@ package psykeco.recipbe.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.EqualsAndHashCode;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@EqualsAndHashCode(callSuper=false)
 @Entity
-public class Ingrediente {
+public class Composizione{
 	@Id
 	private String name;
 	private double qta; 
+	private String unit;
 }
