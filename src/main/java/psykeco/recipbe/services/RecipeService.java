@@ -17,6 +17,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import psykeco.recipbe.db.ComposizioneQuery;
 import psykeco.recipbe.db.RecipeQuery;
 import psykeco.recipbe.model.Ricetta;
 import psykeco.recipbe.resposes.GenericResponse;
@@ -28,8 +29,10 @@ public class RecipeService {
 	@Autowired
 	private RecipeQuery recipeQuery;
 
+
 	public GenericResponse addRecipe(Ricetta r){
 		recipeQuery.saveAndFlush(r);
+		
 		return new GenericResponse().code(CODE_200_OK).message(ADDED_OK_RECIPE);
 	}
 

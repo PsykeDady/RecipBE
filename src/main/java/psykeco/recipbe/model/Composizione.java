@@ -1,7 +1,10 @@
 package psykeco.recipbe.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,4 +17,5 @@ public class Composizione{
 	private String name;
 	private double qta; 
 	private String unit;
+
 }
