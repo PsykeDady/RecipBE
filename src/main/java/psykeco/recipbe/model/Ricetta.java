@@ -8,6 +8,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinColumns;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 
@@ -27,5 +28,6 @@ public class Ricetta {
 	@JoinColumn()
 	private List<Composizione> ingredients; 
 	private String descrizione; 
+	@Lob
 	private String imgPath;
 }
