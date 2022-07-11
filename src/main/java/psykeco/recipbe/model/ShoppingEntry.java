@@ -1,7 +1,6 @@
 package psykeco.recipbe.model;
 
 
-import java.util.Optional;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
